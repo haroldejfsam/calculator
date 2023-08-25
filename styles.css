@@ -1,39 +1,196 @@
+@font-face {
+    font-family: 'Eurostile';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Eurostile'), url('/eurostile.woff') format('woff');
+}
+    
+
+    @font-face {
+    font-family: 'EuroStyle Normal';
+    font-style: normal;
+    font-weight: normal;
+    src: local('EuroStyle Normal'), url('/EuroStyle Normal.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Digital7Mono-Yz9J4';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Digital7Mono-Yz9J4'), url('/Digital7Mono-Yz9J4.woff') format('woff');
+}
+
+#display {
+    display: flex;
+    font-family: 'Digital7Mono-Yz9J4';
+    font-size: 55px;
+    width: 270px;
+    justify-content:flex-end;
+    align-items: center;
+    border-radius: 2%;
+    padding-right: 10px;
+}
+
 body {
+    background: url("/wooden-textured-background.jpg");
+        
+    background-repeat: repeat;
+    background-size: 50%;
+    background-blend-mode: normal;
+    margin: 0%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#container {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
-    background: rgb(247, 127, 66) url("/desk-background.jpg") fixed;
-    
-    background-position: center;
-    
-    background-repeat: no-repeat;
-
-
-
-    
+     
     
     }
 
-    #container {
+#calculator {
         display: flex;
+        flex-direction: column;
         background-color: dimgray;
         width: 350px;
         height:600px;
         border-radius: 2%;
         border: 2PX SOLID black;
-        align-items: center;
+        justify-items: center;
+        align-content: center;
         
         
-    }
+}
 
     
-    #outerBezel {
+#topBezel {
         background-color: black;
+        width: 320px;
+        height: 200px;
+        border-radius: 2%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        
 
-    }
+}
+
+#topBezel > h1 {
+    font-family: 'Eurostile';
+    color: antiquewhite;
+    font-size: x-large;
+    align-self: flex-start;
+    margin-left: 20px;
     
-    #innerBezel {
+}
 
-    }
+#bottomBezel {
+    background-color: black;
+    width: 320px;
+    height: 340px;
+    border-radius: 2%;
+    align-self: flex-start;
+    margin-top: 20px;
+    display: flex;
+   
+    justify-content: space-around;
+    align-self: center;
+    
+
+}
+    
+#display {
+    display: flex;
+    background-color: greenyellow;
+    border: 10px solid lightslategray;
+    border-radius: 2%;
+    width: 280px;
+    height: 100px;
+    align-self: center;
+    
+    
+}
+
+#col1, #col2, #col3, #col4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Eurostile';
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.numbers {
+    background-color: darkslategray;
+    color: antiquewhite;
+    width: 55px;
+    height: 55px;
+    border: 2px solid whitesmoke;
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.operators {
+    background-color: antiquewhite;
+    color: black;
+    width: 55px;
+    height: 55px;
+    border: 2px solid orangered;
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+#butClear {
+    background-color: red;
+    color: black;
+    width: 55px;
+    height: 55px;
+    border: 2px solid whitesmoke;
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#col4 > div {
+   
+    height: 55px;
+    width: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#butPlus {
+    width: 55px;
+    height:110px !important;
+}
+
+.numbers:hover {
+    background-color: darkslateblue;
+}
+
+.operators:hover {
+    background-color: darkslateblue;
+}
+
+#butClear:hover {
+    background-color: darkslateblue;
+}
+
