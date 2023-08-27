@@ -2,7 +2,7 @@
     font-family: 'Eurostile';
     font-style: normal;
     font-weight: normal;
-    src: local('Eurostile'), url('./eurostile.woff') format('woff');
+    src: local('Eurostile'), url('./docs/assets/eurostile.woff') format('woff');
 }
     
 
@@ -10,14 +10,14 @@
     font-family: 'EuroStyle Normal';
     font-style: normal;
     font-weight: normal;
-    src: local('EuroStyle Normal'), url('./EuroStyle Normal.woff') format('woff');
+    src: local('EuroStyle Normal'), url('./docs/assets/EuroStyle Normal.woff') format('woff');
 }
 
 @font-face {
     font-family: 'Digital7Mono-Yz9J4';
     font-style: normal;
     font-weight: 600;
-    src: local('Digital7Mono-Yz9J4'), url('./Digital7Mono-Yz9J4.woff') format('woff');
+    src: local('Digital7Mono-Yz9J4'), url('./docs/assets/Digital7Mono-Yz9J4.woff') format('woff');
 }
 
 #display {
@@ -32,7 +32,7 @@
 }
 
 body {
-    background: url("./wooden-textured-background.jpg");
+    background: url("./docs/assets/wooden-textured-background.jpg");
         
     background-repeat: repeat;
     background-size: 50%;
