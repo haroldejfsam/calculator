@@ -20,14 +20,20 @@
     src: local('Digital7Mono-Yz9J4'), url('./docs/assets/Digital7Mono-Yz9J4.woff') format('woff');
 }
 
+
 #display {
     display: flex;
+    background-color: greenyellow;
+    border: 10px solid lightslategray;
+    border-radius: 2%;
+    width: 280px;
+    height: 100px;
+    align-self: center;
     font-family: 'Digital7Mono-Yz9J4';
-    font-size: 55px;
-    width: 270px;
     justify-content:flex-end;
     align-items: center;
-    border-radius: 2%;
+    user-select: none;    
+    font-size: 55px;
     padding-right: 10px;
 }
 
@@ -89,6 +95,7 @@ body {
     font-size: x-large;
     align-self: flex-start;
     margin-left: 20px;
+    user-select: none; 
     
 }
 
@@ -107,17 +114,7 @@ body {
 
 }
     
-#display {
-    display: flex;
-    background-color: greenyellow;
-    border: 10px solid lightslategray;
-    border-radius: 2%;
-    width: 280px;
-    height: 100px;
-    align-self: center;
-    
-    
-}
+
 
 #col1, #col2, #col3, #col4 {
     display: flex;
@@ -138,6 +135,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none; 
 }
 
 .operators {
@@ -150,6 +148,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none; 
     
 
 }
@@ -164,6 +163,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none; 
 }
 
 #col4 > div {
