@@ -21,6 +21,29 @@
   
 // };
 
+// const sum = function(array) {
+// 	return array.reduce((acc, item) => acc += item,0)
+// };
+
+// const multiply = function(array) {
+//   return array.reduce((acc, item)=> acc *= item,1)
+
+// };
+
+const numberKeys = Array.from(document.querySelectorAll('.numbers'));
+let displayValue = document.querySelector('#display');
+let workingArray = [];
+
+
+numberKeys.forEach((item) => {
+	item.addEventListener('click', (e)=> {
+		if(displayValue.innerText.length < 11) {
+		displayValue.innerText += e.target.innerText;
+		};
+	})
+})
+
+
 const modulo = function(a, b) {
 	return a % b
 };
@@ -33,11 +56,11 @@ const subtract = function(a, b) {
 	return a - b 
 };
 
-const sum = function(array) {
-	return array.reduce((acc, item) => acc += item,0)
+const multiply = function (a, b) {
+    return a * b
 };
 
-const multiply = function(array) {
-  return array.reduce((acc, item)=> acc *= item,1)
-
+const  divide = function(a, b) {
+	return a / b
 };
+
