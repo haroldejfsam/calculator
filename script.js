@@ -31,6 +31,9 @@
 // };
 
 const numberKeys = Array.from(document.querySelectorAll('.numbers'));
+const clearButton = document.querySelector('#butClear');
+const backButton = document.querySelector('#butBack');
+const decButton = document.querySelector('#butDot');
 let displayValue = document.querySelector('#display');
 let workingArray = [];
 
@@ -43,7 +46,22 @@ numberKeys.forEach((item) => {
 	})
 })
 
+clearButton.addEventListener('click', ()=> {
+	displayValue.innerText = '';
+})
 
+backButton.addEventListener('click', ()=>{
+	displayValue.innerText = displayValue.innerText.slice(0, -1);
+})
+
+decButton.addEventListener('click', (e)=> {
+	if(displayValue.innerText.length < 11 && !displayValue.innerText.includes('.')) {
+	displayValue.innerText += e.target.innerText;
+	};
+})
+
+
+// calculation functions
 const modulo = function(a, b) {
 	return a % b
 };

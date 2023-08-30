@@ -153,6 +153,20 @@ body {
 
 }
 
+#butDot {
+    background-color: darkslategray;
+    color: antiquewhite;
+    width: 55px;
+    height: 55px;
+    border: 2px solid whitesmoke;
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none; 
+
+}
+
 #butClear {
     background-color: red;
     color: black;
