@@ -14,7 +14,7 @@ let secondNum = '';
 let operator = '';
 let result = '';
 
-
+// Listens for numberkey clicks and populates display, limits to 11 characters
 numberKeys.forEach((item) => {
 	item.addEventListener('click', (e)=> {
 		if(displayValue.innerText.length < 11) {
@@ -23,6 +23,8 @@ numberKeys.forEach((item) => {
 	})
 })
 
+
+// Listens for clear button click and clears display and values stored
 clearButton.addEventListener('click', () => {
 	displayValue.innerText = '';
 	firstNum = '';
@@ -31,36 +33,154 @@ clearButton.addEventListener('click', () => {
 	result = '';
 })
 
+// Listen for backbutton click and removes last character in display
 backButton.addEventListener('click', () =>{
 	displayValue.innerText = displayValue.innerText.slice(0, -1);
 })
 
+
+// Listens for decimal button click and adds decimal character to display only if display length is less than 11 characters and decimal character is not already present
 decButton.addEventListener('click', (e) => {
 	if(displayValue.innerText.length < 11 && !displayValue.innerText.includes('.')) {
 	displayValue.innerText += e.target.innerText;
 	};
 })
 
+
+// Listens for equals button click and executes operate function
 eqButton.addEventListener('click',() =>{
 	operate();
 })
 
 
+//Operator click events
+
+// Listens for add button click
 addButton.addEventListener('click', ()=> {
+	if (firstNum == '') {
 	firstNum = displayValue.innerText;
 	operator = '+';
 	displayValue.innerText = '';
-})
+	} else {
+		operator = '+';
+		operate();
+	}; 
+});
+
+
+// Listens for modulo button click
+modButton.addEventListener('click', ()=> {
+	if (firstNum == '') {
+	firstNum = displayValue.innerText;
+	operator = '%';
+	displayValue.innerText = '';
+	} else {
+		operator = '%';
+		operate();
+	}; 
+});
+
+
+// Listens for subtract button click
+subButton.addEventListener('click', ()=> {
+	if (firstNum == '') {
+	firstNum = displayValue.innerText;
+	operator = '-';
+	displayValue.innerText = '';
+	} else {
+		operator = '-';
+		operate();
+	}; 
+});
+
+
+// Listens for multiply button click
+mulButton.addEventListener('click', ()=> {
+	if (firstNum == '') {
+	firstNum = displayValue.innerText;
+	operator = 'x';
+	displayValue.innerText = '';
+	} else {
+		operator = 'x';
+		operate();
+	}; 
+});
+
+
+// Listens for divide button click
+divButton.addEventListener('click', ()=> {
+	if (firstNum == '') {
+	firstNum = displayValue.innerText;
+	operator = '/';
+	displayValue.innerText = '';
+	} else {
+		operator = '/';
+		operate();
+	}; 
+});
+
+
+
 
 
 // calculation functions
 const operate = () =>{
 	switch (operator){
 		case '+':
+			
 			secondNum = displayValue.innerText;
+			displayValue.innerText = '';
 			result = add(firstNum, secondNum);
 			displayValue.innerText = result;
+			firstNum = '';
+			secondNum = '';
+			operator = '';
 			break;
+		
+		case '%':
+			
+			secondNum = displayValue.innerText;
+			displayValue.innerText = '';
+			result = modulo(firstNum, secondNum);
+			displayValue.innerText = result;
+			firstNum = '';
+			secondNum = '';
+			operator = '';
+			break;
+
+		case '-':
+			
+			secondNum = displayValue.innerText;
+			displayValue.innerText = '';
+			result = subtract(firstNum, secondNum);
+			displayValue.innerText = result;
+			firstNum = '';
+			secondNum = '';
+			operator = '';
+			break;
+
+		case 'x':
+			
+			secondNum = displayValue.innerText;
+			displayValue.innerText = '';
+			result = multiply(firstNum, secondNum);
+			displayValue.innerText = result;
+			firstNum = '';
+			secondNum = '';
+			operator = '';
+			break;
+
+		case '/':
+			
+			secondNum = displayValue.innerText;
+			displayValue.innerText = '';
+			result = divide(firstNum, secondNum);
+			displayValue.innerText = result;
+			firstNum = '';
+			secondNum = '';
+			operator = '';
+			break;
+
 		default:
 			console.log('eqButton default case');
 
@@ -68,12 +188,13 @@ const operate = () =>{
 	}
 }
 
-const modulo = function(a, b) {
-	return Number(a) % Number(b)
-};
 
 const add = function(a, b) {
 	return Number(a) + Number(b)
+};
+
+const modulo = function(a, b) {
+	return Number(a) % Number(b)
 };
 
 const subtract = function(a, b) {
