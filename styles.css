@@ -26,15 +26,19 @@
     background-color: greenyellow;
     border: 10px solid lightslategray;
     border-radius: 2%;
-    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
     height: 100px;
     align-self: center;
     font-family: 'Digital7Mono-Yz9J4';
     justify-content:flex-end;
     align-items: center;
     user-select: none;    
-    font-size: 55px;
+    font-size: 50px;
     padding-right: 10px;
+    overflow-wrap: anywhere;
+    
+    
 }
 
 body {

@@ -50,6 +50,7 @@ decButton.addEventListener('click', (e) => {
 // Listens for equals button click and executes operate function
 eqButton.addEventListener('click',() =>{
 	operate();
+	displayValue.innerText = result;
 })
 
 
@@ -62,8 +63,10 @@ addButton.addEventListener('click', ()=> {
 	operator = '+';
 	displayValue.innerText = '';
 	} else {
-		operator = '+';
+		
 		operate();
+		operator = '+';
+		displayValue.innerText = '';
 	}; 
 });
 
@@ -75,8 +78,10 @@ modButton.addEventListener('click', ()=> {
 	operator = '%';
 	displayValue.innerText = '';
 	} else {
-		operator = '%';
+		
 		operate();
+		operator = '%';
+		displayValue.innerText = '';
 	}; 
 });
 
@@ -88,8 +93,10 @@ subButton.addEventListener('click', ()=> {
 	operator = '-';
 	displayValue.innerText = '';
 	} else {
-		operator = '-';
+		
 		operate();
+		operator = '-';
+		displayValue.innerText = '';
 	}; 
 });
 
@@ -101,8 +108,10 @@ mulButton.addEventListener('click', ()=> {
 	operator = 'x';
 	displayValue.innerText = '';
 	} else {
-		operator = 'x';
+		
 		operate();
+		operator = 'x';
+		displayValue.innerText = '';
 	}; 
 });
 
@@ -114,8 +123,10 @@ divButton.addEventListener('click', ()=> {
 	operator = '/';
 	displayValue.innerText = '';
 	} else {
-		operator = '/';
+		
 		operate();
+		operator = '/';
+		displayValue.innerText = '';
 	}; 
 });
 
@@ -131,8 +142,8 @@ const operate = () =>{
 			secondNum = displayValue.innerText;
 			displayValue.innerText = '';
 			result = add(firstNum, secondNum);
-			displayValue.innerText = result;
-			firstNum = '';
+			displayValue.innerText = '';
+			firstNum = result;
 			secondNum = '';
 			operator = '';
 			break;
@@ -142,8 +153,8 @@ const operate = () =>{
 			secondNum = displayValue.innerText;
 			displayValue.innerText = '';
 			result = modulo(firstNum, secondNum);
-			displayValue.innerText = result;
-			firstNum = '';
+			displayValue.innerText = '';
+			firstNum = result;
 			secondNum = '';
 			operator = '';
 			break;
@@ -153,8 +164,8 @@ const operate = () =>{
 			secondNum = displayValue.innerText;
 			displayValue.innerText = '';
 			result = subtract(firstNum, secondNum);
-			displayValue.innerText = result;
-			firstNum = '';
+			displayValue.innerText = '';
+			firstNum = result;
 			secondNum = '';
 			operator = '';
 			break;
@@ -164,8 +175,8 @@ const operate = () =>{
 			secondNum = displayValue.innerText;
 			displayValue.innerText = '';
 			result = multiply(firstNum, secondNum);
-			displayValue.innerText = result;
-			firstNum = '';
+			displayValue.innerText = '';
+			firstNum = result;
 			secondNum = '';
 			operator = '';
 			break;
@@ -174,9 +185,9 @@ const operate = () =>{
 			
 			secondNum = displayValue.innerText;
 			displayValue.innerText = '';
-			result = divide(firstNum, secondNum);
-			displayValue.innerText = result;
-			firstNum = '';
+			result = secondNum == '0' ? `STAY IN SCHOOL` : divide(firstNum, secondNum);
+			displayValue.innerText = '';
+			firstNum = result;
 			secondNum = '';
 			operator = '';
 			break;
@@ -208,6 +219,5 @@ const multiply = function (a, b) {
 const  divide = function(a, b) {
 	return Number(a) / Number(b)
 };
-
 
 
